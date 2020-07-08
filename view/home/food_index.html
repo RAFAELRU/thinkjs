@@ -6,6 +6,11 @@
   <title>{{controller.meta_title}}</title>
 </head>
 <body>
-  
+  <ul>
+    {% for item in foodList %}
+     <li>{{item.foodid}} - {{item.foodname}} - {{item.foodurl}}</li>
+    {% endfor %}
+  </ul>
+  {{foodList | dump}}
 </body>
 </html>
