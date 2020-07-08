@@ -12,6 +12,9 @@ module.exports = class extends Base {
   };
 
   async moreAction() {
-    return this.display();
+    const { page = 1 } = this.post();
+    const foodModel = this.model('food');
+    const foodList = await foodModel.getFoodList(page);
+    return this.success(foodList);
   };
 };

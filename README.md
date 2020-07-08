@@ -13,3 +13,9 @@
     ```
   2.3 View  
     `controller.xx` 当前页面控制器注入的属性
+
+## 前端页面
+- 先进行前端页面构建
+  `npm run build:front`
+- 然后启动服务
+  `npm start`
