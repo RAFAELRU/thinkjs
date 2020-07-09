@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{controller.meta_title}}</title>
+    <link rel="stylesheet" href="http://s3.qhimg.com/!b617ac16/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/food_good.css">
+</head>
+
+<body>
+    <div id="love">
+        <ul id="foods" class="js-foods">
+        	{% for item in foodList %}
+            <li class="food">
+            	<img class="food-img" src="{{item.foodurl}}" alt="{{item.foodname}}">
+            </li>
+          {% endfor %}
+        </ul>
+        <a id="more" class="js-more" href="javascript:;">加载更多</a>
+    </div>
+
+    <script src="/static/dist/food_good.js"></script>
+</body>
+
+</html>

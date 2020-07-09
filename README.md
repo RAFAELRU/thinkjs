@@ -1,22 +1,21 @@
+## 入门示例
+1. 配置 
+  1.1 数据库配置    `adapter.js`
+  1.2 模板引擎配置   `adapter.js`
+2. MVC
+  2.1 Model 
+    `this.page().select()` 分页查询
+  2.2 Controller
+    ```
+    this.model('field name')  // model name也是表名
+    this.assign()             // 注入数据
+    this.display()            // 渲染模板
+    ```
+  2.3 View  
+    `controller.xx` 当前页面控制器注入的属性
 
-Application created by [ThinkJS](http://www.thinkjs.org)
-
-## Install dependencies
-
-```
-npm install
-```
-
-## Start server
-
-```
-npm start
-```
-
-## Deploy with pm2
-
-Use pm2 to deploy app on production enviroment.
-
-```
-pm2 startOrReload pm2.json
-```
+## 前端页面
+- 先进行前端页面构建
+  `npm run build:front`
+- 然后启动服务
+  `npm start`

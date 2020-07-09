@@ -5,7 +5,7 @@ const mysql = require('think-model-mysql');
 const {Console, File, DateFile} = require('think-logger3');
 const path = require('path');
 const isDev = think.env === 'development';
-
+const mysqlDevConfig = require('./config.development');
 /**
  * cache adapter config
  * @type {Object}
@@ -27,6 +27,7 @@ exports.cache = {
  * model adapter config
  * @type {Object}
  */
+const mysqlConfig = isDev ? mysqlDevConfig.mysql : {};
 exports.model = {
   type: 'mysql',
   common: {
@@ -36,14 +37,15 @@ exports.model = {
   },
   mysql: {
     handle: mysql,
-    database: '',
+    database: 'food',
     prefix: 'think_',
     encoding: 'utf8',
     host: '127.0.0.1',
     port: '',
     user: 'root',
     password: 'root',
-    dateStrings: true
+    dateStrings: true,
+    ...mysqlConfig
   }
 };
 
